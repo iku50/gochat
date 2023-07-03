@@ -7,12 +7,13 @@ package site
 
 import (
 	"fmt"
-	"github.com/sirupsen/logrus"
 	"gochat/config"
 	"io/ioutil"
 	"net/http"
 	"os"
 	"path"
+
+	"github.com/sirupsen/logrus"
 )
 
 type Site struct {
