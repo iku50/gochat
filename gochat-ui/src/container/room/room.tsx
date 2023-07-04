@@ -12,6 +12,7 @@ const Room = () => {
     const {TabPane} = Tabs;
     const [form] = Form.useForm();
     const [msgList, setMsgList] = React.useState<string[]>([]);
+    const [emoji, setEmoji] = React.useState<string[]>([]);
     const [userOnlineCnt, setUserOnlineCnt] = useState(0);
     const [onlineUserList, setOnlineUserList] = useState([]) as any;
     const [active, setActive] = useState('room');
@@ -45,6 +46,7 @@ const Room = () => {
             let data = JSON.parse(evt.data) as any;
             console.log("ws onmessage:", data);
             if (data.op === 3) {
+                
                 const msgItem = data.fromUserName + '(' + data.createTime + '):' + data.msg;
                 let historyMsgList = msgList.slice();
                 historyMsgList.push(msgItem);
@@ -52,6 +54,12 @@ const Room = () => {
                     window.location.reload()
                     return
                 }
+                // 这里应当传输消息的AI生成表情,然后再展示
+                // 现在先用随机数生成表情
+                const random = Math.floor(Math.random() * 10);
+                let emojiList = emoji.slice();
+                emojiList.push(random.toString());
+                setEmoji(emojiList);
                 setMsgList(historyMsgList);
             } else if (data.op === 4) {
                 setUserOnlineCnt(data.count);
@@ -116,11 +124,6 @@ const Room = () => {
                 >
                     <Descriptions.Item label="房间名:">gochat</Descriptions.Item>
                     <Descriptions.Item label="在线人数:">{userOnlineCnt}</Descriptions.Item>
-                    <Descriptions.Item label="Github:">
-                        <a href="https://github.com/LockGit/gochat" target="_blank">
-                            <GithubOutlined/>
-                        </a>
-                    </Descriptions.Item>
                 </Descriptions>
                 <div className="card-container">
                     <Tabs type="card" onChange={onChangeGetRoomInfo} activeKey={active}>
@@ -129,7 +132,7 @@ const Room = () => {
                                 <div className="msg" id="msg">
                                     {
                                         msgList.length > 0 && msgList.map((item, index) => {
-                                            return <p key={index}>{item}</p>;
+                                            return <div><img src={require("../../assets/crycry.png")} alt="" className="emoji"/><p key={index}>{item}</p></div>;
                                         })
                                     }
                                 </div>

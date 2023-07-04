@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.70833f45.css",
-    "main.js": "/static/js/main.898e8d97.js",
+    "main.css": "/static/css/main.7a3e9e44.css",
+    "main.js": "/static/js/main.ac48565b.js",
+    "static/media/crycry.png": "/static/media/crycry.22ee92b4d90042d90b72.png",
     "index.html": "/index.html",
-    "main.70833f45.css.map": "/static/css/main.70833f45.css.map",
-    "main.898e8d97.js.map": "/static/js/main.898e8d97.js.map"
+    "main.7a3e9e44.css.map": "/static/css/main.7a3e9e44.css.map",
+    "main.ac48565b.js.map": "/static/js/main.ac48565b.js.map"
   },
   "entrypoints": [
-    "static/css/main.70833f45.css",
-    "static/js/main.898e8d97.js"
+    "static/css/main.7a3e9e44.css",
+    "static/js/main.ac48565b.js"
   ]
 }

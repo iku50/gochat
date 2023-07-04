@@ -22,6 +22,7 @@ require (
 )
 
 require (
+	github.com/DataDog/go-python3 v0.0.0-20211102160307-40adc605f1fe
 	github.com/akutz/memconn v0.1.0 // indirect
 	github.com/apache/thrift v0.16.0 // indirect
 	github.com/armon/go-metrics v0.3.10 // indirect

@@ -48,11 +48,7 @@
 
 .main {
     display: flex;
-    height: 500px;
+    height: 700px;
     background: blanchedalmond;
     flex-wrap: nowrap;
-}
-
-.video {
-    width: 62%;
 }

@@ -6,7 +6,11 @@
 
 ### 情感判断器
 
-将AI用于对话情感的识别，并基于在每一个新对话上增设根据其对话内容自动生成的emoji
+将AI(sentiment_classify)用于对话情感的识别，并基于在每一个新对话上增设根据其对话内容自动生成的emoji。
+
+在聊天室和私聊中根据对话文本AI判断对应emoji，在服务器端调用对应模型判断(logic/publish)代码完成判断后用websocket传到客户端。
+
+logic
 
 灵感来源（new bing)
 
@@ -19,6 +23,8 @@
 如果安装过程出现错误，请参照read.md文件
 
 （除m1芯片或arm架构)
+
+提前安装git yarn docker
 
 ```bash
 docker pull lockgit/gochat:1.18 # 目前使用的是1.18版本

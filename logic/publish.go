@@ -9,16 +9,17 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/go-redis/redis"
-	"github.com/rcrowley/go-metrics"
-	"github.com/rpcxio/rpcx-etcd/serverplugin"
-	"github.com/sirupsen/logrus"
-	"github.com/smallnest/rpcx/server"
 	"gochat/config"
 	"gochat/proto"
 	"gochat/tools"
 	"strings"
 	"time"
+
+	"github.com/go-redis/redis"
+	"github.com/rcrowley/go-metrics"
+	"github.com/rpcxio/rpcx-etcd/serverplugin"
+	"github.com/sirupsen/logrus"
+	"github.com/smallnest/rpcx/server"
 )
 
 var RedisClient *redis.Client
@@ -84,6 +85,7 @@ func (logic *Logic) addRegistryPlugin(s *server.Server, network string, addr str
 }
 
 func (logic *Logic) RedisPublishChannel(serverId string, toUserId int, msg []byte) (err error) {
+	//这里添加emoji判断并将对应序号传递给客户端，客户端根据序号显示对应的emoji
 	redisMsg := proto.RedisMsg{
 		Op:       config.OpSingleSend,
 		ServerId: serverId,
@@ -104,6 +106,7 @@ func (logic *Logic) RedisPublishChannel(serverId string, toUserId int, msg []byt
 }
 
 func (logic *Logic) RedisPublishRoomInfo(roomId int, count int, RoomUserInfo map[string]string, msg []byte) (err error) {
+	//还有这里
 	var redisMsg = &proto.RedisMsg{
 		Op:           config.OpRoomSend,
 		RoomId:       roomId,

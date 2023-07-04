@@ -4,8 +4,8 @@ import {GithubOutlined} from "@ant-design/icons";
 const PageFooter = () => {
     return (
         <div>
-            <span>Author By Lock @MIT License </span>
-            <a href="https://github.com/LockGit/gochat" target="_blank"><GithubOutlined/>gochat - aiemoji</a>
+            <span>Made by group test0327 @MIT License </span>
+            <a href="https://github.com/iku50/gochat-emojiAI" target="_blank"><GithubOutlined/>gochat - aiemoji</a>
         </div>
     )
 }
