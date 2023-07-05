@@ -1,3 +1,6 @@
+# github.com/DataDog/go-python3 v0.0.0-20211102160307-40adc605f1fe
+## explicit
+github.com/DataDog/go-python3
 # github.com/akutz/memconn v0.1.0
 ## explicit
 github.com/akutz/memconn
